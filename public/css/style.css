@@ -1,0 +1,14 @@
+html {
+   
+        background: url('../img/pinwheelGalaxy.jpeg') no-repeat center center fixed; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        font-family: GillSans, Calibri, Trebuchet, sans-serif;
+}
+h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 64px;
+    font-style: black italic;
+}
