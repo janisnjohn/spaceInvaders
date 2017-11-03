@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/janisnjohn/spaceInvaders/issues"
   },
-  "homepage": "https://github.com/janisnjohn/spaceInvaders#readme"
+  "homepage": "https://github.com/janisnjohn/spaceInvaders#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "node-handlebars": "^0.9.7",
+    "sequelize": "^4.22.0"
+  }
 }
