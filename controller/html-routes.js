@@ -2,6 +2,7 @@
 var express = require('express');
 var db = require('../models/index.js');
 
+
 var htmlRouter = express.Router();
 
 htmlRouter.get('/leaderboard', function(request, response){
@@ -10,6 +11,7 @@ htmlRouter.get('/leaderboard', function(request, response){
 
 htmlRouter.get('/', function(request, response){
 	console.log('/ GET');
+	response.render("index");
 });
 
 htmlRouter.get('/game/:id', function(request, response){

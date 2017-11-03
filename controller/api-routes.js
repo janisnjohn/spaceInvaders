@@ -6,12 +6,17 @@ var apiRouter = express.Router();
 
 apiRouter.get('/leaderboard', function(request, response){
 	console.log('/api/leaderboard GET');
-	res.end();
+	db.Record.findAll({
+		order: [['score', 'DESC']],
+	}).then(function(results){
+		response.json(results)
+	});
 });
 
 apiRouter.post('/score', function(request, response){
 	console.log('/api/score POST');
-	res.end();
+	//db.Record.create(request.body);
+	response.status('200').end();
 });
 
 module.exports = apiRouter;
