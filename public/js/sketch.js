@@ -4,18 +4,25 @@ var shots = [];
 var song;
 var laserSound;
 var blast;
+var scoreElem;
 
 function preload() {
     soundFormats('mp3', 'wav');
-    song = loadSound('sounds/background.mp3');
+    song = loadSound('../public/sounds/background.mp3');
     // laserSound = loadSound('sounds/laserSound.mp3');
     // laserSound = loadSound('sounds/fast_zap.mp3');
-    laserSound = loadSound('sounds/laser_gun.wav');
-    blast = loadSound('sounds/medium_blast.mp3');
+    laserSound = loadSound('../public/sounds/laser_gun.wav');
+    blast = loadSound('../public/sounds/medium_blast.mp3');
+    imgBack = loadImage('../public/img/invader.jpg');
 }
 
 function setup(){
     createCanvas(600, 400);
+    image(imgBack, 0, 0);
+    scoreElem = createDiv('Score = 0');
+    scoreElem.position(20, 20);
+    scoreElem.id = 'score';
+    scoreElem.style('color', 'white');
     song.play();
     song.setVolume(0.5);
     ship = new Ship();
@@ -25,7 +32,7 @@ function setup(){
 }
 
 function draw () {
-    background(51);
+    background(imgBack);
     ship.show();
     ship.move();
 
@@ -61,6 +68,14 @@ for (var i= shots.length-1; i>=0; i--) {
     }
 }
 
+}
+
+function checkEnemyHitShip (){
+    point(xShip, yShip);
+    if (xCor[Cor.length-1] === xShip && yCor[yCor.length -1] === yShip) {
+       var prevScore = parseInt(scoreElem.html().substring());
+       scoreElem.html('Score =' + (prevScore + 1));
+    }
 }
 
 function keyReleased () {
