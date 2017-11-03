@@ -3,5 +3,8 @@ module.exports = function(sequelize, DataTypes) {
     user_name: DataTypes.STRING,
     score: DataTypes.INTEGER
   });
-  return Game;
+  
+  Record.sync();
+
+  return Record;
 };
