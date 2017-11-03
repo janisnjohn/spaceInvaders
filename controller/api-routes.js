@@ -1,6 +1,6 @@
 // api routes for getting and posting game results
 var express = require('express');
-var db = require('../models/index.js');
+const db = require('../models/index.js');
 
 var apiRouter = express.Router();
 
