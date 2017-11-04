@@ -8,16 +8,18 @@ var scoreElem;
 
 function preload() {
     soundFormats('mp3', 'wav');
-    song = loadSound('../public/sounds/background.mp3');
+    song = loadSound('/sounds/background.mp3');
     // laserSound = loadSound('sounds/laserSound.mp3');
     // laserSound = loadSound('sounds/fast_zap.mp3');
-    laserSound = loadSound('../public/sounds/laser_gun.wav');
-    blast = loadSound('../public/sounds/medium_blast.mp3');
-    imgBack = loadImage('../public/img/invader.jpg');
+    laserSound = loadSound('/sounds/laser_gun.wav');
+    blast = loadSound('/sounds/medium_blast.mp3');
+    imgBack = loadImage('/img/invader.jpg');
 }
 
 function setup(){
-    createCanvas(600, 400);
+    var canvas = createCanvas(600, 400);
+    canvas.parent('sketch-holder');
+
     image(imgBack, 0, 0);
     scoreElem = createDiv("Score = 0");
     scoreElem.position(20, 20);
