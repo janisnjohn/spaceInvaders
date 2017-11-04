@@ -12,6 +12,7 @@ h1 {
     font-size: 64px;
     color: #eee;
     text-shadow: 2px 2px 2px black;
+    margin-top: -100px;
 }
 
 #gameCard{
@@ -35,4 +36,41 @@ h1 {
 #leaderboardCard:hover{
   transform: scale(1.05);
   box-shadow: 3px 3px #169663;
+}
+#showcase {
+    height: 250px;
+    
+}
+
+#showcase h1 {
+    font-size: 64px;
+    line-height: 1.3;
+    position: relative;
+    animation: heading;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+}
+@keyframes heading {
+    0% {
+        top: -50px;
+    }
+    100% {
+        top: 200px;
+    }
+}
+
+#content {
+    position: relative;
+    animation-name: content;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes content {
+    0% {
+        left: -1000px;
+    }
+    100% {
+        left: 0;
+    }
 }
