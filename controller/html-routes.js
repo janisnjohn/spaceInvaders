@@ -14,8 +14,9 @@ htmlRouter.get('/', function(request, response){
 	response.render("index");
 });
 
-htmlRouter.get('/game/:id', function(request, response){
+htmlRouter.get('/game', function(request, response){
 	console.log(request.url, 'GET');
+    response.render("game");
 });
 
 module.exports = htmlRouter;
