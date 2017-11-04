@@ -19,29 +19,38 @@ function preload() {
 function setup(){
     createCanvas(600, 400);
     image(imgBack, 0, 0);
-    scoreElem = createDiv('Score = 0');
+    scoreElem = createDiv("Score = 0");
     scoreElem.position(20, 20);
     scoreElem.id = 'score';
     scoreElem.style('color', 'white');
-    song.play();
+    song.loop();
     song.setVolume(0.5);
+    
+    // checkEnemyHitShip();
     ship = new Ship();
     for (var i=0; i < 6; i++) {
         enemies[i] = new Enemy(i *80 +80, 60);
     }
+    checkGameStatus();
 }
+
+// function resetEnemies(){
+//     for (var i=0; i < 12; i++) {
+//         enemies[i] = new Enemy(i *80 +80, 60);
+//     }
+// }
 
 function draw () {
     background(imgBack);
     ship.show();
     ship.move();
-
+    checkGameStatus();
     for (var i=0; i<shots.length; i++){
         shots[i].show();
         shots[i].move();
         for (var j=0; j<enemies.length; j++) {
             if (shots[i].hits(enemies[j])) {
-                enemies[j].grow();
+                enemies[j].evap();
                 shots[i].evaporate();
             }
         }
@@ -67,14 +76,30 @@ for (var i= shots.length-1; i>=0; i--) {
         shots.splice(i,1);
     }
 }
+for (var i= enemies.length-1; i>=0; i--) {
+    if (enemies[i].toDelete){
+        enemies.splice(i,1);
+    }
+}
 
 }
 
+//check to see if any enemies are left
+function checkGameStatus() {
+        if (enemies.length == 0) {
+        var prevScore = parseInt((scoreElem.html()).substring(8));
+        scoreElem.html('You passed a level.  Your score is : ' + (prevScore+1));
+        redraw();
+    }
+}
+
+// check to see if enemy hit the ship
 function checkEnemyHitShip (){
-    point(xShip, yShip);
-    if (xCor[Cor.length-1] === xShip && yCor[yCor.length -1] === yShip) {
-       var prevScore = parseInt(scoreElem.html().substring());
-       scoreElem.html('Score =' + (prevScore + 1));
+    var enemy = new Enemy(ship.x, height);
+    var ship = new Ship(enemy.x, height);
+    if (enemy === ship) {
+        var scoreVal = parseInt(scoreElem.html().substring(8));
+        scoreElem.html('Game ended! Your score was : ' + scoreVal);
     }
 }
 

@@ -5,11 +5,17 @@ function Enemy(x,y) {
 
     this.xdir =1;
     this.ydir =0;
+    this.toDelete = false;
 
-    this.grow = function() {
-        this.r = this.r -4;
-        blast.play();
-    }
+    // this.grow = function() {
+    //     this.r = this.r -4;
+    //     blast.play();
+    // }
+
+    this.evap = function() {
+    this.toDelete = true;
+    blast.play();
+  }
 
     this.shiftDown = function(){
         this.xdir *=-1;
