@@ -3,7 +3,7 @@ function Enemy(x,y) {
     this.y = y;
     this.r = 30;
 
-    this.xdir =1;
+    this.xdir =5;
     this.ydir =0;
     this.toDelete = false;
 
