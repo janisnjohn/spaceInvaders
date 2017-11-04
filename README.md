@@ -7,13 +7,13 @@ Welcome to Spacer Things! Use the arrow keys to maneuver your ship left and righ
 
 ## Dependencies
 
- - **p5.js**
+ 1. **p5.js**
   - Utilized for Graphics and Custom Physics Engine
- - **MySQL & Sequelize**
+ 2. **MySQL & Sequelize**
   - Utilized for Leaderboard Persistence
- - **Node & Express**
+ 3. **Node & Express**
   - Server-Side logic and Routing
- - **Handlebars & Materialize**
+ 4.  **Handlebars & Materialize**
   - View Templating and Styling
 
 
