@@ -1,61 +1,76 @@
 <!-- container div -->
 <div class="container">
-<br><br>
-<center>
-  <h1 class="white-text font-weight light italic">Invaders Must Die!!!!!</h1>
   <br>
+  <br>
+  <center>
+    <header id="showcase">
+      <h1 class="white-text font-weight light italic">Invaders Must Die!!!!!</h1>
+    </header>
+    <br>
 
-    <div class="row">
-        <!--<div class="col s9 m4">
-          <div class="card">
-            <div class="card-image">
-              <img src="img/start.jpg">
-              <span class="card-title black-text"></span>
-              <a class="btn-floating halfway-fab waves-effect waves-light purple"><i class="material-icons">flight_takeoff</i></a>
-            </div>
-            <div class="card-content">
-              <p class="flow-text">Save the Universe from the Invaders</p>
-            </div>
+    <div class="row" id="content">
+
+      <div class="col s12 m6">
+        <div id="gameCard" class="z-depth-5 card">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="img/joystick.jpeg">
           </div>
-        </div>-->
-        <div class="col s12 m6">
-          <div id="gameCard" class="z-depth-5 card">
-            <div class="card-image waves-effect waves-block waves-light">
-              <img class="activator" src="img/street4.jpg">
+          <div class="card-content">
+            <span class="card-title activator purple-text text-darken-4">Start Here
+              <i class="material-icons right">flight_takeoff</i>
+            </span>
+            <p></p>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title purple-text text-darken-4">Instructions
+              <i class="material-icons right">close</i>
+            </span>
+            <!-- TAP TARGET -->
+            <div class="fixed-action-btn" style="bottom:45px;right:24px">
+              <a id="menu" onclick="$('.tap-target').tapTarget('open')" class="waves-effect waves-light btn btn-floating btn-large cyan">
+                <i class="material-icons">menu</i>
+              </a>
             </div>
-            <div class="card-content">
-              <span class="card-title activator purple-text text-darken-4">Instructions<i class="material-icons right">flight_takeoff</i></span>
-              <p></p>
-            </div>
-            <div class="card-reveal">
-              <span class="card-title purple-text text-darken-4">We're Under Attack!!!<i class="material-icons right">close</i></span>
-              <p>Save the Universe from the Invaders</p>
-              <!-- <a href="#"><button class="color purple btn-large btn waves-effect waves-light pulse">Start New Game</button></a>-->
-              <!-- Modal Trigger -->
-                <button class="color purple waves-effect waves-light btn pulse modal-trigger" href="/game">Start New Game</button>
-              <!-- Modal Structure -->
-              <div id="modal1" class="modal">
-                  <div class="modal-content">
-                    <h4>Game Canvas</h4>
-                    <p>Render Game Here</p>
-                  </div>
-              </div>
-            </div>
+            <a onclick="$('.tap-target').tapTarget('open')">
+              <button class="waves-effect waves-light btn cyan pulse">View Instructions</button>
+            </a>
+            <br>
+            <br>
+
+
+
+            <a href="#">
+              <button class="color purple btn-large btn waves-effect waves-light pulse">Start New Game</button>
+            </a>
+
           </div>
         </div>
-        <div class="col s12 m6">
-            <div id="leaderboardCard" class="z-depth-5 card">
-              <div class="card-image">
-                <img src="img/card.jpg">
-                <span class="card-title">View Leaderboard</span>
-                <a class="btn-floating halfway-fab waves-effect waves-light purple" href="/leaderboard"><i class="material-icons">view_list</i></a>
-              </div>
-              <div class="card-content">
-                <p class="flow-text">See How You Stack Up</p>
-              </div>
-            </div>
+      </div>
+      <div class="col s12 m6">
+        <div id="leaderboardCard" class="z-depth-5 card">
+          <div class="card-image">
+            <img src="img/card.jpg">
+            <span class="card-title">View Leaderboard</span>
+            <a class="btn-floating halfway-fab waves-effect waves-light purple" href="/leaderboard">
+              <i class="material-icons">view_list</i>
+            </a>
           </div>
-   </div>
-</center>
- <!-- end container div -->
-</div>
+          <div class="card-content">
+            <p class="flow-text">See How You Stack Up</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </center>
+
+  <!-- TAP TARGET CONTENT -->
+  <div class="tap-target cyan" data-activates="menu">
+    <div class="tap-target-content white-text">
+      <h5>Instructions</h5>
+      <p class="white-text">These instructions will be the best instructions ever. Tremendous.</p>
+    </div>
+    <a href="#">
+      <button class="color purple btn-large btn waves-effect waves-light pulse">Start New Game</button>
+    </a>
+  </div>
+  
