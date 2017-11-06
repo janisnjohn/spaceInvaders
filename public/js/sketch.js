@@ -46,7 +46,7 @@ function setup(){
 }
 
 function resetEnemies(){
-    for (var i=0; i < 7; i++) {
+    for (var i=0; i < 9; i++) {
         enemies[i] = new Enemy(i *80 +80, 60);
     }
 }
@@ -91,7 +91,7 @@ function moveEnemies(){
     for (var i = 0; i < enemies.length; i++){
         enemies[i].show();
         enemies[i].move();
-        if (enemies[i].x > width || enemies[i].x <0){
+        if (enemies[i].x > 760 || enemies[i].x <0){
             edge = true;
         }
     }
@@ -118,7 +118,7 @@ function checkEnemies(){
 //check to see if any enemies are left
 function checkGameStatus() {
     if (enemies.length == 0) {
-        scoreBoard.message.html('You passed a level.  Your score is : ' + scoreBoard.score);
+        // scoreBoard.message.html('You passed a level.  Your score is : ' + scoreBoard.score);
         scoreBoard.increaseLevel(1);
         resetEnemies();
     }

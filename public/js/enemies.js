@@ -18,7 +18,7 @@ function Enemy(x, y, r) {
     this.shiftDown = function(){
         this.xdir *= -1;
         this.y += this.r;
-        console.log(this.y)
+        console.log(this.y);
     }
 
     this.move =function(){
@@ -35,9 +35,9 @@ function Enemy(x, y, r) {
 
 
 function EnemyGroup(rows) {
-    this.rows = rows
+    this.rows = rows;
 
-    this.totalWidth = 300
+    this.totalWidth = 600;
 
     for (var i=0; i < n; i++) {
         enemies[i] = new Enemy(i *80 +80, 60);
