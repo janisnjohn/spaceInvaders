@@ -3,7 +3,7 @@ var scoreBoard;
 var gameSounds;
 
 var score = 0;
-var level = 0;
+var level = 1;
 var enemySpeed = 0;
 var ship;
 var enemies = [];
@@ -15,7 +15,8 @@ function preload() {
 
     gameSounds = {
         laserSound: loadSound('/sounds/laser_gun.wav'),
-        blast: loadSound('/sounds/medium_blast.mp3'),
+        //blast: loadSound('/sounds/medium_blast.mp3'),
+        blast: loadSound('/sounds/bomb.mp3'),
         song: loadSound('/sounds/background.mp3'),
     }
     
@@ -26,7 +27,7 @@ function preload() {
 }
 
 function setup(){
-    var canvas = createCanvas(600, 400);
+    var canvas = createCanvas(800, 600);
     canvas.parent('sketch-holder');
     frameRate(60);
 
@@ -45,7 +46,7 @@ function setup(){
 }
 
 function resetEnemies(){
-    for (var i=0; i < 6; i++) {
+    for (var i=0; i < 7; i++) {
         enemies[i] = new Enemy(i *80 +80, 60);
     }
 }
@@ -118,20 +119,18 @@ function checkEnemies(){
 function checkGameStatus() {
     if (enemies.length == 0) {
         scoreBoard.message.html('You passed a level.  Your score is : ' + scoreBoard.score);
+        scoreBoard.increaseLevel(1);
         resetEnemies();
     }
 }
 
 // check to see if enemy hit the ship
-function checkEnemyHitShip (){
-    var enemy = new Enemy(ship.x, height);
-    var ship = new Ship(enemy.x, height);
-
-    if (enemy === ship) {
-        var scoreVal = parseInt(scoreElem.html().substring(8));
-        scoreElem.html('Game ended! Your score was : ' + scoreVal);
-    }
-}
+// function checkEnemyHitShip (){
+//     if (Enemy === ship.x) {
+//         scoreBoard.message.html('Game ended! Your score was : ' + scoreBoard.score + "/n/rLevel Finished: " + scoreBoard.level);
+//         gameSounds.song.stop();
+//     }
+// }
 
 function checkShip(){
     if(keyIsDown(LEFT_ARROW) & keyIsDown(RIGHT_ARROW)){

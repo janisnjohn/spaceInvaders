@@ -1,11 +1,14 @@
 function Enemy(x, y, r) {
     this.x = x;
     this.y = y;
-    this.r = 30;
-    this.graphic = loadImage("/img/smallinvader.png");
+    this.r = 40;
+    this.graphic = loadImage("/img/mdInvader2.png");
 
     this.xdir = 1;
     this.ydir = 0;
+    // this.velx = 0.0;
+    // this.accel = 0;
+    // this.force = 0;
     this.toDelete = false;
 
     this.evap = function() {

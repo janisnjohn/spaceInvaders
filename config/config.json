@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "msf",
+    "password": "Artesia1!",
     "database": "spaceinvaders_development",
     "host": "127.0.0.1",
     "dialect": "mysql"

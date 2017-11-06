@@ -1,6 +1,6 @@
 
 function scoreBoard(){
-    this.level = 0;
+    this.level = 1;
     this.score = 0;
 
     this.container = createDiv('');
@@ -8,10 +8,10 @@ function scoreBoard(){
     this.container.position(20, 20);
   
     this.levelDisplay = createDiv("Level: ");
-    this.id = 'levelDisplay';
+    this.levelDisplay.id = 'levelDisplay';
     this.levelDisplay.parent(this.container);
 
-    this.levelElem = createSpan("0");
+    this.levelElem = createSpan("1");
     this.levelElem.id = 'levelElem';
     this.levelElem.parent(this.levelDisplay);
 
@@ -34,6 +34,6 @@ function scoreBoard(){
 
     this.increaseLevel = function(amount){
         this.level += amount;
-        this.levelDisplay.html(this.level);
+        this.levelElem.html(this.level);
     };
 }
