@@ -7,6 +7,7 @@ var htmlRouter = express.Router();
 
 htmlRouter.get('/leaderboard', function(request, response){
 	console.log('/leaderboard GET');
+	response.render("leaderboard");
 });
 
 htmlRouter.get('/', function(request, response){
