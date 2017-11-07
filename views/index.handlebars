@@ -21,8 +21,9 @@
             </span>
             <p></p>
           </div>
-          <div class="card-reveal">
-            <span class="card-title purple-text text-darken-4">Instructions
+          <div class="card-reveal color black white-text">
+            <span class="color black card-title purple-text text-darken-4">
+              <strong>User Menu</strong>
               <i class="material-icons right">close</i>
             </span>
             <!-- TAP TARGET -->
@@ -34,12 +35,9 @@
             <a onclick="$('.tap-target').tapTarget('open')">
               <button class="waves-effect waves-light btn cyan pulse">View Instructions</button>
             </a>
+            <br>OR
             <br>
-            <br>
-
-
-
-            <a href="#">
+            <a href="/game">
               <button class="color purple btn-large btn waves-effect waves-light pulse">Start New Game</button>
             </a>
 
@@ -65,12 +63,21 @@
 
   <!-- TAP TARGET CONTENT -->
   <div class="tap-target cyan" data-activates="menu">
-    <div class="tap-target-content white-text">
+    <div class="tap-target-content white-text" style="display: inline-block;">
       <h5>Instructions</h5>
-      <p class="white-text">These instructions will be the best instructions ever. Tremendous.</p>
+      <p class="white-text">The object of the game to is destroy the enemy invaders before they reach your ship</p>
+      <br>
+      <p class="white-text">You will be able to shoot the attackers using the
+        <kbd>SPACE</kbd> bar</p>
+      <br>
+      <p class="white-text">Move side to side using the
+        <i class="material-icons">arrow_back</i> and
+        <i class="material-icons">arrow_forward</i> keys</p>
+      <br>
+      <p class="white-text">Stay sharp and good luck. The fate of the Universe depends on you!</p>
     </div>
-    <a href="#">
+    <a href="/game">
       <button class="color purple btn-large btn waves-effect waves-light pulse">Start New Game</button>
     </a>
   </div>
-  
+</div>
