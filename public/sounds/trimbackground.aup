@@ -1,0 +1,37 @@
+<?xml version="1.0" standalone="no" ?>
+<!DOCTYPE project PUBLIC "-//audacityproject-1.3.0//DTD//EN" "http://audacity.sourceforge.net/xml/audacityproject-1.3.0.dtd" >
+<project xmlns="http://audacity.sourceforge.net/xml/" projname="trimbackground_data" version="1.3.0" audacityversion="2.2.0" sel0="0.1625396825" sel1="1.9678911565" vpos="0" h="0.0000000000" zoom="344.5312500000" rate="44100.0" snapto="off" selectionformat="hh:mm:ss + milliseconds" frequencyformat="Hz" bandwidthformat="octaves">
+	<tags>
+		<tag name="ALBUM" value="Best Bytes Volume 1"/>
+		<tag name="TITLE" value="By The Water (Aerologic remix)"/>
+		<tag name="BPM (beats per minute)" value="131"/>
+		<tag name="COMMENTS" value="URL: http://freemusicarchive.org/music/Space_Invaders_v_Psychadelik_Pedestrian/Best_Bytes_Volume_1/15--Space_Invaders_v_Psychadelik_Pedestrian--By_The_Water_Aerologic_remix&#x000d;&#x000a;Comments: http://freemusicarchive.org/&#x000d;&#x000a;Curator: &#x000d;&#x000a;Copyright: Attribution-NonCommercial: http://creativecommons.org/licenses/by-nc/3.0/"/>
+		<tag name="TRACKNUMBER" value="15"/>
+		<tag name="Copyright message" value="Attribution-NonCommercial: http://creativecommons.org/licenses/by-nc/3.0/"/>
+		<tag name="ARTIST" value="Space Invaders v Psychadelik Pedestrian"/>
+		<tag name="Band" value="Toucan Music (Various Artists)"/>
+		<tag name="YEAR" value="2012-08-23T16:23:07"/>
+		<tag name="Unknown text information frame" value="2012-08-23 16:23:07"/>
+		<tag name="GENRE" value="Trance"/>
+	</tags>
+	<wavetrack name="background" channel="0" linked="1" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="44100" gain="1.0" pan="0.0">
+		<waveclip offset="0.16253968">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="79616">
+				<waveblock start="0">
+					<simpleblockfile filename="e000009e.au" len="79616" min="-0.820045" max="0.713136" rms="0.229102"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="background" channel="1" linked="0" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="44100" gain="1.0" pan="0.0">
+		<waveclip offset="0.16253968">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="79616">
+				<waveblock start="0">
+					<simpleblockfile filename="e0000be5.au" len="79616" min="-0.815778" max="0.787695" rms="0.229414"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+</project>

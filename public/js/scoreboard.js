@@ -5,7 +5,9 @@ function scoreBoard(){
 
     this.container = createDiv('');
     this.id = 'scoreBoard';
-    this.container.position(380, 30);
+    this.container.position(25, 25);
+    this.container.parent('sketch-holder');
+
   
     this.levelDisplay = createDiv("Level: ");
     this.levelDisplay.id = 'levelDisplay';
