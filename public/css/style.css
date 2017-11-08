@@ -39,7 +39,7 @@ h1 {
 }
 #showcase {
     height: 250px;
-    
+
 }
 
 #showcase h1 {
@@ -81,4 +81,14 @@ h1 {
     height: 600px;
     margin: 0 auto;
     position: relative;
+}
+
+#highScore{
+  color: #fff;
+  font-size: 32px;
+  padding-left: 0 10px 0 10px;
+}
+
+table {
+  border: 5px solid #f718ce;
 }
