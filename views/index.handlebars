@@ -21,8 +21,9 @@
             </span>
             <p></p>
           </div>
-          <div class="card-reveal">
-            <span class="card-title purple-text text-darken-4">Instructions
+          <div class="card-reveal color black white-text waves-ripple">
+            <span class="color black card-title  purple-text text-accent-3">
+              <strong>User Menu</strong>
               <i class="material-icons right">close</i>
             </span>
             <!-- TAP TARGET -->
@@ -32,15 +33,11 @@
               </a>
             </div>
             <a onclick="$('.tap-target').tapTarget('open')">
-              <button class="waves-effect waves-light btn cyan pulse">View Instructions</button>
+              <button class="waves-effect waves-light btn cyan">View Instructions</button>
             </a>
             <br>
-            <br>
-
-
-
-            <a href="game">
-              <button class="color purple btn-large btn waves-effect waves-light pulse">Start New Game</button>
+            <a href="/game">
+              <button class="color purple btn-large btn waves-effect waves-light orange pulse">Start New Game</button>
             </a>
 
           </div>
@@ -51,7 +48,7 @@
           <div class="card-image">
             <img src="img/card.jpg">
             <span class="card-title">View Leaderboard</span>
-            <a class="btn-floating halfway-fab waves-effect waves-light purple" href="leaderboard">
+            <a class="btn-floating halfway-fab waves-effect waves-light waves-orange purple" href="/leaderboard">
               <i class="material-icons">view_list</i>
             </a>
           </div>
@@ -63,14 +60,30 @@
     </div>
   </center>
 
-  <!-- TAP TARGET CONTENT -->
-  <div class="tap-target cyan" data-activates="menu">
-    <div class="tap-target-content white-text">
+  <center>
+  <div class="tap-target purple" data-activates="menu">
+    <div class="tap-target-content white-text" style="display: inline-block;">
       <h5>Instructions</h5>
-      <p class="white-text">These instructions will be the best instructions ever. Tremendous.</p>
+      <br>
+      <p class="white-text">The object of the game to is destroy the enemy invaders before they reach your ship</p>
+      
+      <p class="white-text">You will be able to shoot the attackers using the
+        <kbd>SPACE</kbd> bar</p>
+      
+      <p class="white-text">Move side to side using the
+        <i class="material-icons">arrow_back</i> and
+        <i class="material-icons">arrow_forward</i> keys</p>
+      
+      <p class="white-text">Stay sharp and good luck. The fate of the Universe depends on you!</p>
     </div>
-    <a href="#">
-      <button class="color purple btn-large btn waves-effect waves-light pulse">Start New Game</button>
+    <br>
+    <br>
+    <br>
+    <br>
+    <a href="/game">
+      <button class="color teal btn-large btn waves-effect waves-light pulse">Start New Game</button>
     </a>
   </div>
-  
+  </center>
+
+</div>
