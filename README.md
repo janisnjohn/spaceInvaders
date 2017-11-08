@@ -1,6 +1,8 @@
 # Spacer Things
 _A Browser-Based Arcade Classic_
 
+**Play now on [Heroku](https://arcane-castle-18653.herokuapp.com/)**
+
 ## Instructions
 
 Welcome to Spacer Things! Use the arrow keys to maneuver your ship left and right, and the spacebar to shoot the aliens. Last as long as you can, and try to beat the High Score!
