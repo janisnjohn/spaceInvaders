@@ -2,6 +2,7 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var port = process.env.PORT || 8080;
 var app = express();
+const db = require('./models');
 
 // Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static("public"));
@@ -24,6 +25,8 @@ var apiRoutes = require("./controller/api-routes.js");
 app.use("/", htmlRoutes);
 app.use("/api/", apiRoutes);
 
-app.listen(port, function() {
-  console.log("App listening on port " + port);
+db.sequelize.sync({force: true}).then(function(){
+  app.listen(port, function() {
+    console.log("App listening on port " + port);
+  });
 });
