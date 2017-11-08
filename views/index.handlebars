@@ -4,7 +4,7 @@
   <br>
   <center>
     <header id="showcase">
-      <h1 class="purple-text text-accent-3 font-style light italic">Invaders Must Die!!!!!</h1>
+      <h1 class="white-text font-weight light italic">Invaders Must Die!!!!!</h1>
     </header>
     <br>
 
@@ -15,12 +15,13 @@
           <div class="card-image waves-effect waves-block waves-light">
             <img class="activator" src="img/joystick.jpeg">
           </div>
-          <div class="card-content color black">
-            <span class="card-title activator cyan-text text-accent-2">Start Here
-              <i class="material-icons right">stars</i>
+          <div class="card-content">
+            <span class="card-title activator purple-text text-darken-4">Start Here
+              <i class="material-icons right">flight_takeoff</i>
             </span>
+            <p></p>
           </div>
-          <div class="card-reveal color black white-text">
+          <div class="card-reveal color black white-text waves-ripple">
             <span class="color black card-title  purple-text text-accent-3">
               <strong>User Menu</strong>
               <i class="material-icons right">close</i>
@@ -32,12 +33,11 @@
               </a>
             </div>
             <a onclick="$('.tap-target').tapTarget('open')">
-              <button class="waves-effect waves-light btn cyan pulse">View Instructions</button>
+              <button class="waves-effect waves-light btn cyan">View Instructions</button>
             </a>
-            <br>OR
             <br>
             <a href="/game">
-              <button class="color purple btn-large btn waves-effect waves-light pulse">Start New Game</button>
+              <button class="color purple btn-large btn waves-effect waves-light orange pulse">Start New Game</button>
             </a>
 
           </div>
@@ -48,41 +48,42 @@
           <div class="card-image">
             <img src="img/card.jpg">
             <span class="card-title">View Leaderboard</span>
-            <a class="btn-floating halfway-fab waves-effect waves-light purple" href="/leaderboard">
+            <a class="btn-floating halfway-fab waves-effect waves-light waves-orange purple" href="/leaderboard">
               <i class="material-icons">view_list</i>
             </a>
           </div>
-          <div class="card-content color black">
-            <p class="flow-text teal-text text-accent-3">See How You Stack Up</p>
+          <div class="card-content">
+            <p class="flow-text">See How You Stack Up</p>
           </div>
         </div>
       </div>
     </div>
-    <div class="footer">
-      <p class="orange-text text-accent-3">
-        <a href="https://github.com/janisnjohn/spaceInvaders">GitHub Repo</a>
-        |
-        <a href="/api">Player Score API</a>
-      </p>
-    </div>
   </center>
-  <!-- TAP TARGET CONTENT -->
-  <div class="tap-target cyan" data-activates="menu">
+
+  <center>
+  <div class="tap-target purple" data-activates="menu">
     <div class="tap-target-content white-text" style="display: inline-block;">
       <h5>Instructions</h5>
-      <p class="white-text">The object of the game to is destroy the enemy invaders before they reach your ship</p>
       <br>
+      <p class="white-text">The object of the game to is destroy the enemy invaders before they reach your ship</p>
+      
       <p class="white-text">You will be able to shoot the attackers using the
         <kbd>SPACE</kbd> bar</p>
-      <br>
+      
       <p class="white-text">Move side to side using the
         <i class="material-icons">arrow_back</i> and
         <i class="material-icons">arrow_forward</i> keys</p>
-      <br>
+      
       <p class="white-text">Stay sharp and good luck. The fate of the Universe depends on you!</p>
     </div>
+    <br>
+    <br>
+    <br>
+    <br>
     <a href="/game">
-      <button class="color purple btn-large btn waves-effect waves-light pulse">Start New Game</button>
+      <button class="color teal btn-large btn waves-effect waves-light pulse">Start New Game</button>
     </a>
   </div>
+  </center>
+
 </div>

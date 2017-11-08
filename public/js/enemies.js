@@ -1,11 +1,14 @@
 function Enemy(x, y, r) {
     this.x = x;
     this.y = y;
-    this.r = 30;
-    this.graphic = loadImage("/img/smallinvader.png");
+    this.r = 40;
+    this.graphic = loadImage("/img/mdInvader2.png");
 
     this.xdir = 1;
     this.ydir = 0;
+    // this.velx = 0.0;
+    // this.accel = 0;
+    // this.force = 0;
     this.toDelete = false;
 
     this.evap = function() {
@@ -15,7 +18,7 @@ function Enemy(x, y, r) {
     this.shiftDown = function(){
         this.xdir *= -1;
         this.y += this.r;
-        console.log(this.y)
+        console.log(this.y);
     }
 
     this.move =function(){
@@ -32,9 +35,9 @@ function Enemy(x, y, r) {
 
 
 function EnemyGroup(rows) {
-    this.rows = rows
+    this.rows = rows;
 
-    this.totalWidth = 300
+    this.totalWidth = 600;
 
     for (var i=0; i < n; i++) {
         enemies[i] = new Enemy(i *80 +80, 60);
