@@ -14,7 +14,7 @@
     "dialect": "mysql"
   },
   "production": {
-    "use_env_variable": "JAWSDB_URL"
+    "use_env_variable": "JAWSDB_URL",
     "username": "t7ql20t7hyr1i5co",
     "password": "c9pml9iu2ta7n1vm",
     "database": "spaceinvaders_production",
