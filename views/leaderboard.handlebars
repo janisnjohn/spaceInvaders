@@ -12,20 +12,16 @@
             </thead>
 
             <tbody>
+              
+              {{#each Record}}
                 <tr>
-                    <td>Alvin</td>
-                    <td>10000</td>
+                    <td>{{this.dataValues.user_name}}</td>
+                    <td>{{this.dataValues.score}}</td>
                 </tr>
+                {{/each}}
+
             </tbody>
         </table>
-
-
-
-
-
-
-
-
     </center>
     <!--end container div -->
 </div>
