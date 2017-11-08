@@ -15,8 +15,13 @@ Welcome to Spacer Things! Use the arrow keys to maneuver your ship left and righ
   - Utilized for Leaderboard Persistence
  3. **Node & Express**
   - Server-Side logic and Routing
- 4.  **Handlebars & Materialize**
+ 4. **Handlebars & Materialize**
   - View Templating and Styling
+  
+## Testing
+
+  - **Nightmare, Mocha & Chai**
+  - Used for Testing
 
 
 ## Team Breakdown
