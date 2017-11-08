@@ -20,7 +20,7 @@ Welcome to Spacer Things! Use the arrow keys to maneuver your ship left and righ
 ## Team Breakdown
 
 John Lee & Ryan Richholt
- - Graphics Rendering, Leaderboard Management, and Physics Engine
+ - Graphics Rendering, Game Logic, and Physics Engine
 
 Michael Palermo & Fox
- - UI, Front-End Logic, and Documentation
+ - UI, View Engine, and Leaderboard Controller
