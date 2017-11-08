@@ -20,4 +20,10 @@ htmlRouter.get('/game', function(request, response){
     response.render("game");
 });
 
+htmlRouter.get('/gameOver', function(request, response){
+	console.log(request.url, 'GET');
+    response.render("gameOver");
+});
+
+
 module.exports = htmlRouter;
