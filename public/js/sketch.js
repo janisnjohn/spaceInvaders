@@ -3,20 +3,24 @@ var scoreBoard;
 var gameSounds;
 
 var score = 0;
-var level = 0;
+var level = 1;
 var enemySpeed = 0;
 var ship;
 var enemies = [];
 var shots = [];
 
+var counter =0;
+
+
 
 function preload() {
-    soundFormats('mp3', 'wav');
+    soundFormats('mp3', 'wav', 'ogg');
 
     gameSounds = {
         laserSound: loadSound('/sounds/laser_gun.wav'),
-        blast: loadSound('/sounds/medium_blast.mp3'),
-        song: loadSound('/sounds/background.mp3'),
+        //blast: loadSound('/sounds/medium_blast.mp3'),
+        blast: loadSound('/sounds/bomb.mp3'),
+        song: loadSound('/sounds/trimbackground.ogg'),
     }
     
     gameImages = {
@@ -26,7 +30,7 @@ function preload() {
 }
 
 function setup(){
-    var canvas = createCanvas(600, 400);
+    var canvas = createCanvas(800, 600);
     canvas.parent('sketch-holder');
     frameRate(60);
 
@@ -40,12 +44,22 @@ function setup(){
 
     gameSounds.song.loop();
     gameSounds.song.setVolume(0.5);
-    
-    
+    var button = createButton("restart");
+    button.position(810, 570);
+    button.parent('sketch-holder');
+    button.mousePressed(restartSketch); 
 }
 
-function resetEnemies(){
+function restartSketch(){
+    enemies = [];
     for (var i=0; i < 6; i++) {
+        enemies[i] = new Enemy(i *80 +80, 60);
+    }
+}
+
+
+function resetEnemies(){
+    for (var i=0; i < 9; i++) {
         enemies[i] = new Enemy(i *80 +80, 60);
     }
 }
@@ -58,6 +72,19 @@ function draw () {
     checkShots();
     moveEnemies();
     checkEnemies();
+    checkEnemyHitShip();
+}
+
+//progress bar for loading
+function progressBar() {
+    stroke(255);
+    noFill();
+    rect(10, 10, 700,20);
+
+    noStroke();
+    fill(255, 100);
+    var w = 700 * counter / gameSounds;
+    rect(10, 10, w, 20);
 }
 
 // Updates shots positions
@@ -90,7 +117,7 @@ function moveEnemies(){
     for (var i = 0; i < enemies.length; i++){
         enemies[i].show();
         enemies[i].move();
-        if (enemies[i].x > width || enemies[i].x <0){
+        if (enemies[i].x > 760 || enemies[i].x <0){
             edge = true;
         }
     }
@@ -117,21 +144,18 @@ function checkEnemies(){
 //check to see if any enemies are left
 function checkGameStatus() {
     if (enemies.length == 0) {
-        scoreBoard.message.html('You passed a level.  Your score is : ' + scoreBoard.score);
+        // scoreBoard.message.html('You passed a level.  Your score is : ' + scoreBoard.score);
+        scoreBoard.increaseLevel(1);
         resetEnemies();
     }
 }
 
-// check to see if enemy hit the ship
-function checkEnemyHitShip (){
-    var enemy = new Enemy(ship.x, height);
-    var ship = new Ship(enemy.x, height);
-
-    if (enemy === ship) {
-        var scoreVal = parseInt(scoreElem.html().substring(8));
-        scoreElem.html('Game ended! Your score was : ' + scoreVal);
-    }
-}
+//check to see if enemy hit the ship
+ function checkEnemyHitShip (){
+    // console.log("enemy 1: ");
+    //      scoreBoard.message.html('Game ended! Your score was : ' + scoreBoard.score + "/n/rLevel Finished: " + scoreBoard.level);
+         //gameSounds.song.stop();
+ }
 
 function checkShip(){
     if(keyIsDown(LEFT_ARROW) & keyIsDown(RIGHT_ARROW)){

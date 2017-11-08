@@ -1,7 +1,9 @@
-function Ship(){
+function Ship(x,y){
 	var self = this
 
 	this.x = width/2;
+	this.y = width/2;
+	this.graphic = loadImage("/img/smShip.png");
 	this.weapon = null;
 	this.recharge = 500;
 	this.ready = true;
@@ -13,9 +15,10 @@ function Ship(){
 	this.friction = 0.8;
 
 	this.show = function() {
-		fill(255);
-		rectMode(CENTER);
-		rect(this.x, height-20, 60, 20);
+		// fill(255);
+		// rectMode(CENTER);
+		// rect(this.x, height-20, 60, 20);
+		image(this.graphic, this.x, this.y+170, 50);
 	}
 
 	this.setDir = function(dir) {
@@ -38,7 +41,7 @@ function Ship(){
 		}
 
 		this.x += this.vel;
-		this.x = constrain(this.x, 0, 600);
+		this.x = constrain(this.x, 0, 750);
 	}
 
 	this.shoot = function(){
