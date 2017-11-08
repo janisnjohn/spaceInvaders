@@ -1,17 +1,17 @@
 {
   "development": {
     "username": "root",
-    "password": "",
+    "password": "Artesia1!",
     "database": "spaceinvaders_development",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
-    "use_env_variable": "x3ztd854gaa7on6s.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    "use_env_variable": "JAWSDB_URL",
     "dialect": "mysql"
   },
   "production": {
-    "use_env_variable": "Jx3ztd854gaa7on6s.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    "use_env_variable": "JAWSDB_URL",
     "dialect": "mysql"
   }
 }
