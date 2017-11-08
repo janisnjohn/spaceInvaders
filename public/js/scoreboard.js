@@ -38,4 +38,11 @@ function scoreBoard(){
         this.level += amount;
         this.levelElem.html(this.level);
     };
+
+    this.reset = function(){
+        this.score = 0
+        this.level = 1
+        this.scoreElem.html(this.score);
+        this.levelElem.html(this.level);
+    }
 }

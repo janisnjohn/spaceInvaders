@@ -14,6 +14,13 @@ function Ship(x,y){
 	this.accel = 1.5;
 	this.friction = 0.8;
 
+	this.reduceRecharge = function(amount){
+		this.recharge =- amount;
+		if (this.recharge < 0){
+			this.recharge = 0
+		}
+	}
+
 	this.show = function() {
 		// fill(255);
 		// rectMode(CENTER);

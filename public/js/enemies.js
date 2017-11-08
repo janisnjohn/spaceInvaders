@@ -1,4 +1,4 @@
-function Enemy(x, y, r) {
+function Enemy(x, y) {
     this.x = x;
     this.y = y;
     this.r = 40;
@@ -18,7 +18,6 @@ function Enemy(x, y, r) {
     this.shiftDown = function(){
         this.xdir *= -1;
         this.y += this.r;
-        console.log(this.y);
     }
 
     this.move =function(){
