@@ -20,7 +20,7 @@ Welcome to Spacer Things! Use the arrow keys to maneuver your ship left and righ
   
 ## Testing
 
-  - **Nightmare, Mocha & Chai**
+   **Nightmare, Mocha & Chai**
   - Used for Testing
 
 
