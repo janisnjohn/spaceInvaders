@@ -7,18 +7,11 @@
     "dialect": "mysql"
   },
   "test": {
-    "username": "root",
-    "password": "msf",
-    "database": "spaceinvaders_test",
-    "host": "127.0.0.1",
+    "use_env_variable": "x3ztd854gaa7on6s.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   },
   "production": {
-    "use_env_variable": "JAWSDB_URL"
-    "username": "t7ql20t7hyr1i5co",
-    "password": "c9pml9iu2ta7n1vm",
-    "database": "spaceinvaders_production",
-    "host": "x3ztd854gaa7on6s.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    "use_env_variable": "Jx3ztd854gaa7on6s.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   }
 }
