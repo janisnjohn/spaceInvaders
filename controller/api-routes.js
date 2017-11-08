@@ -15,8 +15,12 @@ apiRouter.get('/leaderboard', function(request, response){
 
 apiRouter.post('/score', function(request, response){
 	console.log('/api/score POST');
-	//db.Record.create(request.body);
-	response.status('200').end();
+	console.log(request.body);
+    db.Record.create(request.body).then(function(results){
+    	console.log('added record')
+    	console.log(results)
+    	response.status('200').end();
+    });
 });
 
 module.exports = apiRouter;

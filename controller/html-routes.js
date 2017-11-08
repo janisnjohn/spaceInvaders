@@ -2,13 +2,10 @@
 var express = require('express');
 var db = require('../models');
 
-
-
 var htmlRouter = express.Router();
 
 htmlRouter.get('/leaderboard', function(request, response){
 	console.log('/leaderboard GET');
-
 	// execute sequelize method to find records, chain promise to store data as object
 	db.Record.findAll({
 		// sort array of records descending from highest score
@@ -32,9 +29,10 @@ htmlRouter.get('/game', function(request, response){
     response.render("game");
 });
 
-htmlRouter.get('/gameOver', function(request, response){
+htmlRouter.get('/gameOver/:score', function(request, response){
 	console.log(request.url, 'GET');
-    response.render("gameOver");
+	var gameScore = request.params.score
+    response.render("gameOver", {gameScore: gameScore});
 });
 
 

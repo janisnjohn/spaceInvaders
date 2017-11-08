@@ -2,15 +2,11 @@
 var scoreBoard;
 var gameSounds;
 
-var score = 0;
-var level = 1;
+var gameOn = true;
 var enemySpeed = 0;
 var ship;
 var enemies = [];
 var shots = [];
-
-var counter =0;
-
 
 
 function preload() {
@@ -18,9 +14,8 @@ function preload() {
 
     gameSounds = {
         laserSound: loadSound('/sounds/laser_gun.wav'),
-        //blast: loadSound('/sounds/medium_blast.mp3'),
         blast: loadSound('/sounds/bomb.mp3'),
-        song: loadSound('/sounds/trimbackground.ogg'),
+        song: loadSound('/sounds/trimbackground.wav'),
     }
     
     gameImages = {
@@ -29,63 +24,69 @@ function preload() {
     
 }
 
+
 function setup(){
     var canvas = createCanvas(800, 600);
     canvas.parent('sketch-holder');
     frameRate(60);
 
     scoreBoard = new scoreBoard();
-
     ship = new Ship();
-
-    for (var i=0; i < 6; i++) {
-        enemies[i] = new Enemy(i *80 +80, 60);
-    }
+    resetEnemies();
 
     gameSounds.song.loop();
     gameSounds.song.setVolume(0.5);
+    makeRestartButton();
+}
+
+
+function makeRestartButton(){
     var button = createButton("restart");
     button.position(810, 570);
     button.parent('sketch-holder');
     button.mousePressed(restartSketch); 
 }
 
+
 function restartSketch(){
     enemies = [];
-    for (var i=0; i < 6; i++) {
-        enemies[i] = new Enemy(i *80 +80, 60);
-    }
+    shots = [];
+    ship = new Ship();
+    scoreBoard.reset();
+    resetEnemies();
+    gameOn = true;
 }
 
 
 function resetEnemies(){
-    for (var i=0; i < 9; i++) {
-        enemies[i] = new Enemy(i *80 +80, 60);
+    var max_enemy_cols = 9;
+    var max_enemies = 75;
+    var enemySpeed = Math.max(scoreBoard.level * .25, 1);
+    var numberOfEnemies = Math.min(scoreBoard.level + 6, max_enemies);
+
+    enemies = [];
+    for (var i=0; i < numberOfEnemies; i++) {
+        var col = i % max_enemy_cols;
+        var row = Math.floor(i/max_enemy_cols)
+        enemy = new Enemy(col *80 +80, row *60 +60);
+        enemy.xdir = enemySpeed
+        enemies.push(enemy)
     }
 }
 
+
 function draw () {
-    background(gameImages.background);
-    checkGameStatus();
-    checkShip();
-    moveShots();
-    checkShots();
-    moveEnemies();
-    checkEnemies();
-    checkEnemyHitShip();
+    if (gameOn){
+        background(gameImages.background);
+        checkGameStatus();
+        checkShip();
+        moveShots();
+        checkShots();
+        moveEnemies();
+        checkEnemies();
+    }
 }
 
-//progress bar for loading
-function progressBar() {
-    stroke(255);
-    noFill();
-    rect(10, 10, 700,20);
-
-    noStroke();
-    fill(255, 100);
-    var w = 700 * counter / gameSounds;
-    rect(10, 10, w, 20);
-}
 
 // Updates shots positions
 function moveShots(){    
@@ -120,6 +121,9 @@ function moveEnemies(){
         if (enemies[i].x > 760 || enemies[i].x <0){
             edge = true;
         }
+        if (enemies[i].y > 550){
+            gameOver();
+        }
     }
 
     if (edge) {
@@ -144,18 +148,11 @@ function checkEnemies(){
 //check to see if any enemies are left
 function checkGameStatus() {
     if (enemies.length == 0) {
-        // scoreBoard.message.html('You passed a level.  Your score is : ' + scoreBoard.score);
         scoreBoard.increaseLevel(1);
+        ship.reduceRecharge(10);
         resetEnemies();
     }
 }
-
-//check to see if enemy hit the ship
- function checkEnemyHitShip (){
-    // console.log("enemy 1: ");
-    //      scoreBoard.message.html('Game ended! Your score was : ' + scoreBoard.score + "/n/rLevel Finished: " + scoreBoard.level);
-         //gameSounds.song.stop();
- }
 
 function checkShip(){
     if(keyIsDown(LEFT_ARROW) & keyIsDown(RIGHT_ARROW)){
@@ -171,10 +168,13 @@ function checkShip(){
     ship.show();
 }
 
+function gameOver(){
+    gameOn = false;
+    window.location.href = "/gameOver/"+String(scoreBoard.score);   
+}
 
 function keyPressed () {
-    if (key === " ") {
-        console.log(ship.ready);
+    if (key === " " && gameOn) {
         if (ship.ready){
             ship.shoot();
             var shot = new Shot(ship.x, height);
