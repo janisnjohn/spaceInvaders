@@ -14,9 +14,8 @@ function preload() {
 
     gameSounds = {
         laserSound: loadSound('/sounds/laser_gun.wav'),
-        //blast: loadSound('/sounds/medium_blast.mp3'),
         blast: loadSound('/sounds/bomb.mp3'),
-        song: loadSound('/sounds/trimbackground.ogg'),
+        song: loadSound('/sounds/trimbackground.wav'),
     }
     
     gameImages = {
@@ -171,7 +170,7 @@ function checkShip(){
 
 function gameOver(){
     gameOn = false;
-    
+    window.location.href = "/gameOver/"+String(scoreBoard.score);   
 }
 
 function keyPressed () {

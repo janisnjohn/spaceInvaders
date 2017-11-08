@@ -3,32 +3,42 @@
     <br>
     <br>
     <center>
-        <header id="showcase">
-      <h1 class="cyan-text text-accent-3 font-style light italic">Game Over</h1>
+    <header id="showcase">
+      <h1 class="cyan-text text-accent-3 font-style light italic">Game Over: {{gameScore}} </h1>
     </header>
     <br>
     <div class="row">
-        <form class="col s12">
+        <form class="col s6 offset-s3 color purple">
         <div class="row">
-            <div class="input-field col s6">
-            <input placeholder="Name" id="first_name" type="text" class="validate">
-            <label for="name">Name</label>
+            <div class="input-field s6 offset-s3">
+                <input id="first_name" type="text" class="validate">
+                <label for="name">Name</label>
             </div>
-            <div class="input-field col s6">
-            <input id="score" type="text" class="validate">
-            <label for="last_name">Score</label>
-            <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+        </div>
+        <div class="row">
+            <div class="input-field col s6 offset-s3">
+            <input disabled value="{{ gameScore }}" id="score" type="hidden" class="validate">
+            <button id="submit" class="btn waves-effect waves-light" type="submit" name="action">Submit
             <i class="material-icons right">send</i>
             </button>
+            </div>
         </div>
     </div>
-
-
-
-
-
-
-
     </center>
     <!--end container div -->
 </div>
+<script type="text/javascript">
+    $('#submit').on('click', function(event){
+        event.preventDefault();
+        var score = $('#score').val();
+        var user_name = $('#first_name').val();
+
+        $.ajax({
+            url: '/api/score',
+            method: "POST",
+            data: {score: score, user_name: user_name},
+        }).done(function(response){
+            window.location.href = '/leaderboard';
+        });
+    });
+</script>
