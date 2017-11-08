@@ -14,10 +14,11 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": "msf",
+    "use_env_variable": "JAWSDB_URL"
+    "username": "t7ql20t7hyr1i5co",
+    "password": "c9pml9iu2ta7n1vm",
     "database": "spaceinvaders_production",
-    "host": "127.0.0.1",
+    "host": "x3ztd854gaa7on6s.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   }
 }
