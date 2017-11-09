@@ -9,7 +9,7 @@ describe("spaceInvaders", function() {
   it("should send user to the game page", function(done) {
     // ID for the login button.
     Nightmare({ show: true })
-      .goto("http://localhost:8080/")
+      .goto("https://arcane-castle-18653.herokuapp.com/")
       // Click the catalog link
       .click("#gameCard")
       .click("#game")
@@ -25,7 +25,7 @@ describe("spaceInvaders", function() {
   it("should send user to the leaderboard page", function(done) {
     // ID for the login button.
     Nightmare({ show: true })
-      .goto("http://localhost:8080/")
+      .goto("https://arcane-castle-18653.herokuapp.com/")
       // Click the catalog link
       .click("#leaderboard")
       .evaluate(function() {

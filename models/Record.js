@@ -6,7 +6,7 @@ module.exports = function(sequelize, DataTypes) {
     timestamps: false
   });
 
-  Record.sync();
+  // Record.sync({force:true});
 
   return Record;
 };
