@@ -13,6 +13,7 @@ apiRouter.get('/leaderboard', function(request, response){
 	});
 });
 
+
 apiRouter.post('/score', function(request, response){
 	console.log('/api/score POST');
 	console.log(request.body);

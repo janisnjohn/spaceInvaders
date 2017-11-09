@@ -10,8 +10,8 @@ html {
 h1 {
     font-family: 'Roboto', sans-serif;
     font-size: 64px;
-    color: #eee;
-    text-shadow: 2px 2px 2px black;
+    color: rgb(235, 23, 147);
+    text-shadow: 2px 2px 2px rgb(235, 23, 147);
     margin-top: -100px;
 }
 
@@ -86,9 +86,35 @@ h1 {
 #highScore{
   color: #fff;
   font-size: 32px;
-  padding-left: 0 10px 0 10px;
+  
 }
 
 table {
   border: 5px solid #f718ce;
 }
+
+.wrapper {
+    color: #f718ce;
+    font-size: 32px;
+    border: 5px solid #f718ce;
+    background-color: black;
+    width: 90%;
+}
+   
+.footer {
+    position:fixed;
+    left:0px;
+    bottom:0px;
+    height:50px;
+    width:100%;
+    background-color: black;
+    border: 1px solid #169663;
+    border-bottom: none;
+    font-size: 32px;
+    padding: 0 10px 0 10px;
+    }
+
+#first_name {
+    font-size: 32px;
+}
+     
