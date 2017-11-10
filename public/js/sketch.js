@@ -149,7 +149,7 @@ function checkEnemies(){
 function checkGameStatus() {
     if (enemies.length == 0) {
         scoreBoard.increaseLevel(1);
-        ship.reduceRecharge(10);
+        ship.reduceRecharge(25);
         resetEnemies();
     }
 }
